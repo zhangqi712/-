@@ -1,0 +1,136 @@
+    
+//货物出库和入库
+
+void current（） 
+ { 
+   int a; 
+   系统（ “CLS”）; 
+   的printf（ “\吨\ T1，货物入库\ n”）; 
+   的printf（ “\吨\ t2时，元件出库\ n”）; 
+   的printf（ “\吨\ t0时，返回\ n”）; 
+   的printf（ “\吨\吨请选择：”）; 
+   的scanf（ “％d”，＆一个）; 
+   如果（一个== 1） 
+{ 
+   输入（）; 
+} 
+   否则如果（a == 2） 
+{ 
+   输出（）; 
+} 
+ }
+
+//查找函数
+
+void search（） 
+ { 
+  int i，a，b; 
+  char c; 
+  char _name [20];
+  char _nature [10];
+  char _beizhu [50];
+  int item [100];
+  int flag = 0; 
+  而（1） 
+{ 
+  系统（ “CLS”）; 
+  的printf（ “\吨\ T1，按元件编号查找\ n”）; 
+  的printf（ “\吨\ T2，按元件名称查找\ n”）; 
+  的printf（ “\吨\ t3时，按元件属性查找\ n”）; 
+  的printf（ “\吨\ t4时，按元件备注查找\ n”）; 
+  的printf（ “\吨\ t0时，返回\ n”）; 
+  的printf（ “\吨\吨请选择：”）; 
+  的scanf（ “％d”，＆一个）; 
+如果（一个== 1） 
+{ 
+  的printf（ “请输入需要查询元件的编号：”）; 
+  的scanf（ “％d”，和b）; 
+  的printf（ “\ n”）; 
+  对于（I = 0; I <S;我++） 
+{ 
+  if（b == food [i] .num）break; 
+} 
+  如果（I'S） 
+  的printf（ “编号：％d \ n名称：％S \ n数量：％d \ n” 个，食品[I] .num，食品[I] .name和食品[I] .amount）; 
+  其他 
+  的printf（ “未找到此编号\ n”）; 
+  printf（“是否继续查找（Y / N）：”）; 
+  scanf（“％c”，＆c）; 
+  如果（c =='N'|| c =='n'）中断; 
+} 
+否则如果（a == 2） 
+{ 
+  的printf（ “请输入需要查询元件的名称：”）; 
+  的scanf（ “％S”，＆_名称）; 
+  的printf（ “\ n”）; 
+  对于（I = 0; I <S;我++） 
+{ 
+  if（strcmp（_name，food [i] .name）== 0）break; 
+} 
+  如果（I'S） 
+  的printf（ “编号：％d \ n名称：％S \ n数量：％d \ n” 个，食品[I] .num，食品[I] .name和食品[I] .amount）; 
+  其他 
+  的printf（ “未找到此名称\ n”）; 
+  printf（“是否继续查找（Y / N）：”）; 
+  scanf（“％c”，＆c）; 
+  如果（c =='N'|| c =='n'）中断; 
+} 
+
+否则如果（a == 3）
+ {
+  的printf（ “请输入需要查询元件的属性：”）;
+  的scanf（ “％S”，_性质）;
+  的printf（ “\ n”）;
+  对于（I = 0; I <S;我++）
+ {
+  如果（的strcmp（_nature，食品[I] .nature）== 0）
+  项[I] = 1;
+ }
+ 对于（I = 0; I <S;我++）
+ {
+ 
+ 如果（（项[I] == 1）&&（I <= S））
+ {
+  的printf（ “**************************** \ n”）;
+  的printf（ “编号：％d \ n名称：％S \ n属性：％S \ n” 个，食品[I] .num，食品[I] .name和食品[I] .nature）;
+  的printf（ “价格：％2F \ n数量：％d \ n备注：％S \ n” 个，食品[I]。价格，食品[I] .amount，食品[I] .remarks）;
+  标志= 1;
+  的printf（ “**************************** \ n”）;
+ }
+ 
+ }
+ }
+ 否则如果（a == 4）
+ {
+  的printf（ “请输入需要查询元件的备注：”）;
+  的scanf（ “％S”，_ beizhu）;
+  的printf（ “\ n”）;
+ 对于（I = 0; I <S;我++）
+ {
+  如果（的strcmp（_beizhu，食品[I] .remarks）== 0）
+  项[I] = 1;
+ }
+ 对于（I = 0; I <S;我++）
+ {
+  如果（（项[I] == 1）&&（I <= S））
+ {
+  的printf（ “**************************** \ n”）;
+  的printf（ “编号：％d \ n名称：％S \ n属性：％S \ n” 个，食品[I] .num，食品[I] .name和食品[I] .nature）;
+  的printf（ “价格：％2F \ n数量：％d \ n备注：％S \ n” 个，食品[I]。价格，食品[I] .amount，食品[I] .remarks）;
+  标志= 1;
+  的printf（ “**************************** \ n”）;
+ }
+ 
+ }
+  如果（标志== 0）
+  的printf（ “未找到此属性的货物\ n”）;
+  其他;
+  printf（“是否继续查找（Y / N）：”）;
+  scanf（“％c”，＆c）;
+  如果（c =='N'|| c =='n'）中断;
+ }
+ 否则如果（a == 0）中断;
+ 
+ }
+ 
+}
